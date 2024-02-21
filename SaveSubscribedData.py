@@ -22,7 +22,7 @@ def on_message(client, userdata, message):
     if message.topic == "/fileName/":
         filename = message.payload
     elif message.topic == "/jsonData/":
-        writeData = open("5MBDummyData.json", "w")
+        writeData = open("./data/5MBDummyData2.json", "w")
         writeData.write(message.payload.decode())
 
 
