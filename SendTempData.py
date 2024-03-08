@@ -5,6 +5,11 @@ from time import time
 import json
 import paho.mqtt.properties as props
 from paho.mqtt.packettypes import PacketTypes
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler, FileModifiedEvent
+
+observer = Observer()
+event_handler = FileSystemEventHandler.on_modified(FileModifiedEvent)
 
 
 fileSource = "./data/5MBDummyData.json"
