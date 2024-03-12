@@ -45,7 +45,7 @@ def on_subscribe(client, userdata, mid, qos, properties):
 
 broker = "10.147.18.165"
 
-client = mqtt.Client("JsonSubscriber", protocol=mqtt.MQTTv5)
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, "JsonSubscriber", protocol=mqtt.MQTTv5)
 print("Connecting to broker", broker)
 client.username_pw_set("changlab", "electrode")
 client.on_connect = on_connect
